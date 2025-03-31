@@ -1,7 +1,10 @@
 import http from "node:http";
+import { jsonHandler } from "./middleware/jsonHandler.js";
 
 const server = http.createServer(async (req, res) => {
   const { method, url } = req;
+
+  await jsonHandler(req, res);
 
   if (method === "GET" && url === "/") {
     return res
@@ -12,16 +15,7 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (method === "POST" && url === "/users") {
-    const buffers = [];
-
-    for await (const chunk of req) {
-      buffers.push(chunk);
-    }
-
-    console.log("🚀 ~ server ~ buffers:", buffers);
-    const data = JSON.parse(Buffer.concat(buffers).toString());
-
-    console.log(data);
+    console.log(req.body);
 
     return res.end("Criando um novo usuario");
   }
