@@ -15,9 +15,7 @@ const server = http.createServer(async (req, res) => {
   }
 
   if (method === "POST" && url === "/users") {
-    console.log(req.body);
-
-    return res.end("Criando um novo usuario");
+    return res.end(JSON.stringify(req.body));
   }
 
   return res
