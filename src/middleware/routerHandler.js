@@ -1,5 +1,8 @@
+import { Database } from "../database.js";
 import { routes } from "../routes.js";
 import { extractQueryParam } from "../utils/extract-query-param.js";
+
+const database = new Database();
 
 export const routerHandler = (req, res) => {
   const route = routes.find((route) => {
@@ -25,5 +28,5 @@ export const routerHandler = (req, res) => {
   req.params = params;
   req.query = query ? extractQueryParam(query) : {};
 
-  return route.controller(req, res);
+  return route.controller({ req, res, database });
 };
