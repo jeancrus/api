@@ -1,5 +1,5 @@
 import fs from "node:fs/promises";
-import { DatabaseQuery } from "./types/database.ts";
+import { DatabaseQuery } from "./types/database.js";
 
 const DATABASE_PATH = new URL("database.json", import.meta.url);
 

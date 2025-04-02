@@ -1,5 +1,5 @@
 import { ServerResponse } from "node:http";
-import { CustomIncomingMessage } from "../types/http.ts";
+import { CustomIncomingMessage } from "../types/http.js";
 
 export const jsonHandler = async (
   req: CustomIncomingMessage,

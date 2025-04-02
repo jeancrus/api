@@ -1,6 +1,6 @@
 import http from "node:http";
-import { jsonHandler } from "./middleware/jsonHandler.ts";
-import { routerHandler } from "./middleware/routerHandler.ts";
+import { jsonHandler } from "./middleware/jsonHandler.js";
+import { routerHandler } from "./middleware/routerHandler.js";
 
 const server = http.createServer(async (req, res) => {
   await jsonHandler(req, res);

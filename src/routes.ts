@@ -1,5 +1,5 @@
-import { Route, RouteParams } from "./types/http.ts";
-import { parseRoutePath } from "./utils/parseRoutePath.ts";
+import { Route, RouteParams } from "./types/http.js";
+import { parseRoutePath } from "./utils/parseRoutePath.js";
 
 const routesConfig: (Omit<Route, "path"> & { path: string })[] = [
   {

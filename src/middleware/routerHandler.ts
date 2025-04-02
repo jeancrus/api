@@ -1,12 +1,12 @@
-import { Database } from "../database.ts";
-import { routes } from "../routes.ts";
-import { extractQueryParam } from "../utils/extractQueryParams.ts";
+import { Database } from "../database.js";
+import { routes } from "../routes.js";
+import { extractQueryParam } from "../utils/extractQueryParams.js";
 import {
   CustomRequest,
   CustomResponse,
   Route,
   RouteParams,
-} from "../types/http.ts";
+} from "../types/http.js";
 const database = new Database();
 
 export const routerHandler = (req: CustomRequest, res: CustomResponse) => {

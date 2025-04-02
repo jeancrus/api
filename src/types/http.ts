@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from "node:http";
-import { Database } from "../database.ts";
-import { DatabaseQuery } from "./database.ts";
+import { Database } from "../database.js";
+import { DatabaseQuery } from "./database.js";
 
 export interface CustomIncomingMessage extends IncomingMessage {
   body?: any;
