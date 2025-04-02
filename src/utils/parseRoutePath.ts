@@ -1,4 +1,4 @@
-export const parseRoutePath = (path) => {
+export const parseRoutePath = (path: string) => {
   const routeParametersRegex = /:([a-zA-Z]+)/g;
 
   const pathWithParams = path.replaceAll(

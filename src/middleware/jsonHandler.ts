@@ -1,5 +1,11 @@
-export const jsonHandler = async (req, res) => {
-  const buffers = [];
+import { ServerResponse } from "node:http";
+import { CustomIncomingMessage } from "../types/http.ts";
+
+export const jsonHandler = async (
+  req: CustomIncomingMessage,
+  res: ServerResponse
+) => {
+  const buffers: Buffer[] = [];
 
   for await (const chunk of req) {
     buffers.push(chunk);
